@@ -1,0 +1,23 @@
+{
+    "name": "fwd-edu-learn-to-solder",
+    "version": "1.46.54",
+    "description": "FWD Edu Learn to Solder",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "jacdac": "github:microsoft/pxt-jacdac",
+        "fwd-edu-common": "github:climate-action-kits/pxt-fwd-edu/fwd-common",
+        "jacdac-button": "github:microsoft/pxt-jacdac/button",
+        "fwd-edu-lights": "github:climate-action-kits/ALPHA-makecode-extension/fwd-lights",
+        "fwd-edu-touch": "github:climate-action-kits/ALPHA-makecode-extension/fwd-touch"
+    },
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
+}
