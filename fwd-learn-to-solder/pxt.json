@@ -1,5 +1,5 @@
 {
-    "name": "fwd-edu-learn-to-solder",
+    "name": "Learn To Solder",
     "version": "1.46.57",
     "description": "FWD Edu Learn to Solder",
     "license": "MIT",
@@ -8,7 +8,7 @@
         "jacdac": "github:microsoft/pxt-jacdac",
         "fwd-edu-common": "github:climate-action-kits/pxt-fwd-edu/fwd-common",
         "jacdac-button": "github:microsoft/pxt-jacdac/button",
-        "fwd-edu-lights": "github:climate-action-kits/ALPHA-makecode-extension/fwd-lights"
+        "lightbulb": "github:ssande-fwd/pxt-fwd-edu-beta/lightbulb"
     },
     "files": [
         "client.ts"

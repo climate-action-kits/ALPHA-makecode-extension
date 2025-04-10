@@ -42,7 +42,7 @@ namespace fwdSensors {
   export const BTN3 = new FwdLTSBtnClient("BTN3")
 
   //% fixedInstances
-  export class FwdLTSLightClient extends fwdSensors.LightsClient {
+  export class FwdLTSLightClient extends modules.LightbulbClient {
 
     constructor(role: string) {
       super(role)
@@ -64,11 +64,11 @@ namespace fwdSensors {
     }
   }
 
-  //% fixedInstance whenUsed
-  export const RED = new FwdLTSLightClient("RED")
-  //% fixedInstance whenUsed
-  export const YELLOW = new FwdLTSLightClient("YELLOW")
-  //% fixedInstance whenUsed
-  export const GREEN = new FwdLTSLightClient("GREEN")
+  //% fixedInstance
+  export const RED = new FwdLTSLightClient("RED?srvo=0")
+  //% fixedInstance
+  export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=1")
+  //% fixedInstance
+  export const GREEN = new FwdLTSLightClient("GREEN?srvo=2")
 }
   

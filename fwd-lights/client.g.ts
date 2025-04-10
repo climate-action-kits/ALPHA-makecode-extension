@@ -1,18 +1,13 @@
 namespace fwdSensors {
+    
     /**
      * Controls LED lights
      **/
     //% fixedInstances blockGap=8
-    export class LightsClient extends jacdac.Client {
-        private readonly _brightness: jacdac.RegisterClient<[number]>;
+    export class LightsClient extends modules.LightbulbClient {
 
         constructor(role: string) {
-            super(jacdac.SRV_LIGHTS, role)
-
-            this._brightness = this.addRegister<[number]>(
-                jacdac.LightsReg.Brightness,
-                jacdac.LightsRegPack.Brightness
-            );
+            super(role)
         }
 
 
@@ -28,15 +23,7 @@ namespace fwdSensors {
         //% value.max=100
         //% value.defl=100
         setBrightness(value: number) {
-            if (value < 0 || value > 100) {
-                // If out of range, do nothing
-                return
-            }
-
-            this.start()
-            const values = this._brightness.values as any[]
-            values[0] = value / 100
-            this._brightness.values = values as [number]
+            super.setBrightness(value)
         }
     }
 
