@@ -3,7 +3,6 @@
     "version": "1.46.57",
     "description": "Controls LED lights",
     "files": [
-        "constants.ts",
         "client.g.ts"
     ],
     "testFiles": [
