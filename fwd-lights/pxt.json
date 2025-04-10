@@ -1,6 +1,6 @@
 {
     "name": "Lights",
-    "version": "1.46.59",
+    "version": "1.46.60",
     "description": "Controls LED lights",
     "files": [
         "client.g.ts"
