@@ -1,6 +1,6 @@
 {
     "name": "Forward Education Color Sensor V39",
-    "version": "1.46.57",
+    "version": "1.46.58",
     "description": "Senses RGB colors",
     "files": [
         "constants.ts",
