@@ -1,6 +1,6 @@
 namespace fwdSensors {
   
-    //% fixedInstances
+  //% fixedInstances
   export class FwdLTSBtnClient extends modules.ButtonClient {
 
     constructor(role: string) {
@@ -13,8 +13,25 @@ namespace fwdSensors {
      */
     //% group="Learn To Solder"
     //% block="on $this $event"
-    //% blockId=fwd_touch_on_ltspress
-    fwdOnLTSPress(event: jacdac.ButtonEvent, handler: () => void) { this.onEvent(event, handler) }
+    //% blockId=fwd_lts_on_press
+    fwdOnPress(event: jacdac.ButtonEvent, handler: () => void) { super.onEvent(event, handler) }
+
+    /**
+     * Returns the ms duration of the last button hold in ms
+     */
+    //% group="Learn To Solder"
+    //% block="$this hold duration (ms)"
+    //% blockId=fwd_lts_hold_duration
+    fwdHoldDuration(): number { return super.holdDuration() }
+
+    /**
+     * Returns true if the button is currently pressed, otherwise false
+     */
+    //% group="Learn To Solder"
+    //% block="$this pressed"
+    //% blockId=fwd_lts_is_pressed
+    fwdIsPressed(): boolean { return super.pressed() }
+
   }
 
   //% fixedInstance whenUsed
