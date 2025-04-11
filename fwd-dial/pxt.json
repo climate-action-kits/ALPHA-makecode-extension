@@ -17,6 +17,9 @@
         "_locales/fr/fwd-edu-dial-jsdoc-strings.json",
         "_locales/fr/fwd-edu-dial-strings.json"
     ],
+    "testFiles": [
+        "test.ts"
+    ],
     "supportedTargets": [
         "microbit"
     ]
