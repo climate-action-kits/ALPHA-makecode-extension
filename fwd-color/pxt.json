@@ -14,7 +14,8 @@
     ],
     "dependencies": {
         "core": "*",
-        "jacdac": "github:microsoft/pxt-jacdac"
+        "jacdac": "github:microsoft/pxt-jacdac",
+        "fwd-edu-common": "github:climate-action-kits/ALPHA-makecode-extension/fwd-color"
     },
     "testDependencies": {
         "nucleo-f411re": "*"
