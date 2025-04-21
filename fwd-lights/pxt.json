@@ -1,0 +1,23 @@
+{
+    "name": "Lights",
+    "version": "1.47.1",
+    "description": "Controls LED lights",
+    "files": [
+        "client.g.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "arcade",
+        "microbit",
+        "maker",
+        "calliopemini"
+    ],
+    "dependencies": {
+        "core": "*",
+        "jacdac": "github:microsoft/pxt-jacdac",
+        "fwd-edu-common": "github:climate-action-kits/ALPHA-makecode-extension/fwd-common",
+        "lightbulb": "github:climate-action-kits/ALPHA-makecode-extension/lightbulb"
+    }
+}
