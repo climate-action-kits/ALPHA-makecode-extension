@@ -19,6 +19,7 @@
         "fwd-edu-ph": "github:climate-action-kits/ALPHA-makecode-extension/fwd-ph",
         "fwd-edu-solar": "github:climate-action-kits/ALPHA-makecode-extension/fwd-solar",
         "fwd-edu-sonar": "github:climate-action-kits/ALPHA-makecode-extension/fwd-sonar",
+        "fwd-edu-temperature": "github:climate-action-kits/ALPHA-makecode-extension/fwd-temperature",
         "fwd-edu-touch": "github:climate-action-kits/ALPHA-makecode-extension/fwd-touch"
     },
     "files": [

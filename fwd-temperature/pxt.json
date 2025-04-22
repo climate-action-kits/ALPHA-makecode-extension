@@ -1,0 +1,21 @@
+{
+    "name": "fwd-edu-temperature",
+    "version": "1.47.1",
+    "description": "FWD Edu Climate Action Kit Gen. 2 Temperature",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "jacdac": "github:microsoft/pxt-jacdac",
+        "fwd-edu-common": "github:climate-action-kits/ALPHA-makecode-extension/fwd-common",
+        "jacdac-temperature": "github:microsoft/pxt-jacdac/temperature"
+    },
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
+}
