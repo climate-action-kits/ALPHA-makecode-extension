@@ -14,7 +14,7 @@ namespace fwdSensors {
         }
 
         /**
-         * Returns the sensor's distance reading in meters
+         * Returns the sensor's pH reading
          */
         //% group="pH"
         //% block="$this pH"
@@ -24,7 +24,7 @@ namespace fwdSensors {
             if (this.calibrated) {
                 
                 const slope = (this.standard2 - this.standard1) / (this.reading2 - this.reading1);
-                const intercept = 4 - slope * this.reading1;
+                const intercept = this.standard1 - slope * this.reading1;
                 const reading = super.acidity();
 
                 return slope * reading + intercept;

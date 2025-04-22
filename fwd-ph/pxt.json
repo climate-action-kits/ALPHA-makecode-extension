@@ -12,6 +12,9 @@
     "files": [
         "client.ts"
     ],
+    "testFiles": [
+        "test.ts"
+    ],
     "supportedTargets": [
         "microbit"
     ]
