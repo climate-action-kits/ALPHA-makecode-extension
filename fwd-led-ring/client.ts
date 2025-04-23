@@ -21,8 +21,11 @@ namespace fwdSensors {
     PXL8 = 7,
   }
 
-  //% fixedInstances
+
   export class FwdLEDClient extends modules.LedClient {
+    
+    private static instanceCount = 0;
+
     MAX_REPORT_BRIGHTNESS = 10
     MAX_SERVICE_BRIGHTNESS = 100
     toBlocksBrightness ( serviceBrightness: number ): number {
@@ -34,13 +37,18 @@ namespace fwdSensors {
 
     constructor(role: string) {
       super(role)
+      FwdLEDClient.instanceCount++;
     }
+
+    static getCreatedCount(): number {
+      return FwdLEDClient.instanceCount;
+  }
 
     /**
      * Set the brightness of the LED ring
      * @param brightness Level between 0 (off) and 10 (full power)
      */
-    //% block="set $this brightness to $value"
+    //% block="set %ledRing brightness to $value"
     //% blockId=fwd_led_set_brightness
     //% group="LED Ring"
     //% value.min=0 value.max=10 value.defl=10
@@ -51,7 +59,7 @@ namespace fwdSensors {
     /**
      * Returns how many lights make up an LED ring
      */
-    //% block="$this number of pixels"
+    //% block="%ledRing number of pixels"
     //% blockId=fwd_led_num_pixels
     //% group="LED Ring"
     fwdNumPixels(): number {
@@ -61,7 +69,7 @@ namespace fwdSensors {
     /**
      * Returns the brightness level of the ring, 0-10
      */
-    //% block="$this brightness"
+    //% block="%ledRing brightness"
     //% blockId=fwd_led_get_brightness
     //% group="LED Ring"
     fwdBrightness(): number {
@@ -73,7 +81,7 @@ namespace fwdSensors {
      * @param index the LED number
      * @param rgb color value using either the blocks color picker or hex
      */
-    //% block="set $this $index to $rgb=colorNumberPicker"
+    //% block="set %ledRing $index to $rgb=colorNumberPicker"
     //% blockId=fwd_led_set_single_pixel_colour
     //% group="LED Ring"
     fwdSetPixelColour(index: PixelNames | number, rgb: number): void { this.setPixelColor(index, rgb) }
@@ -82,7 +90,7 @@ namespace fwdSensors {
      * Set all LEDs to a color
      * @param rgb color value using either the blocks color picker or hex 
      */
-    //% block="set all $this LEDs to $rgb=colorNumberPicker"
+    //% block="set all %ledRing LEDs to $rgb=colorNumberPicker"
     //% blockId=fwd_led_set_all_pixels_colour
     //% group="LED Ring"
     fwdSetAllPixelsColour(rgb: number): void { this.setAll(rgb) }
@@ -91,7 +99,7 @@ namespace fwdSensors {
      * Rotate the light pattern left or right, wrapping the last pixel back to the first
      * @param offset The number of positions to rotate. Positive are clockwise, negative are counter-clockwise
      */
-    //% block="rotate $this pattern by $offset"
+    //% block="rotate %ledRing pattern by $offset"
     //% blockId=fwd_led_rotate_pattern
     //% group="LED Ring"
     //% offset.defl=1
@@ -101,14 +109,32 @@ namespace fwdSensors {
      * Shift the light pattern left or right. If the light pattern is shifted past the first or last light, that part of the pattern is removed.
      * @param offset The number of positions to shift. Positive are clockwise, negative are counter-clockwise
      */
-    //% block="shift $this pattern by $offset"
+    //% block="shift %ledRing pattern by $offset"
     //% blockId=fwd_led_shift_pattern
     //% group="LED Ring"
     //% offset.defl=1
     fwdShift(offset:number): void { this.shift(offset) }
 
+
+    
   }
 
-  //% fixedInstance whenUsed
-  export const ledRing = new FwdLEDClient("LED ring")
+  /**
+   * Create an LED Ring client and automtically set it to a variable.
+   */
+  //% group="LED Ring"
+  //% block="Create LED Ring"
+  //% blockSetVariable=ledRing
+  //% weight=101
+  export function createLEDRing(): FwdLEDClient {
+      
+    let role = "";
+    if (fwdSensors.LightsClient.getCreatedCount() === 0) {
+        role = 'ledRing'
+    } else {
+        role = 'ledRing' + (fwdSensors.LightsClient.getCreatedCount() + 1)
+    }
+    
+    return new FwdLEDClient(role)
+  }
 }

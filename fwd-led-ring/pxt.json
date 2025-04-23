@@ -1,7 +1,7 @@
 {
-    "name": "fwd-edu-led",
+    "name": "fwd-edu-led-ring",
     "version": "1.48.4",
-    "description": "FWD Edu Climate Action Kit Gen. 2 LED",
+    "description": "FWD Edu Climate Action Kit Gen. 2 LED Ring",
     "license": "MIT",
     "dependencies": {
         "core": "*",

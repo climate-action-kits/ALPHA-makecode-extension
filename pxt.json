@@ -12,7 +12,7 @@
         "fwd-edu-dial": "github:climate-action-kits/ALPHA-makecode-extension/fwd-dial",
         "fwd-edu-float": "github:climate-action-kits/ALPHA-makecode-extension/fwd-float",
         "fwd-edu-learn-to-solder": "github:climate-action-kits/ALPHA-makecode-extension/fwd-learn-to-solder",
-        "fwd-edu-led": "github:climate-action-kits/ALPHA-makecode-extension/fwd-led",
+        "fwd-edu-led-ring": "github:climate-action-kits/ALPHA-makecode-extension/fwd-led-ring",
         "fwd-edu-lights": "github:climate-action-kits/ALPHA-makecode-extension/fwd-lights",
         "fwd-edu-line": "github:climate-action-kits/ALPHA-makecode-extension/fwd-line",
         "fwd-edu-moisture": "github:climate-action-kits/ALPHA-makecode-extension/fwd-moisture",
