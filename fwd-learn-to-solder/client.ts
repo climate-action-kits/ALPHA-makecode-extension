@@ -18,7 +18,7 @@ namespace fwdSensors {
      * @param event Button pressed (down), held, released (up)
      */
     //% group="Learn To Solder"
-    //% block="on $this $event"
+    //% block="on %ltsBtn $event"
     //% blockId=fwd_lts_on_press
     fwdOnPress(event: jacdac.ButtonEvent, handler: () => void) { super.onEvent(event, handler) }
 
@@ -26,7 +26,7 @@ namespace fwdSensors {
      * Returns the ms duration of the last button hold in ms
      */
     //% group="Learn To Solder"
-    //% block="$this hold duration (ms)"
+    //% block="%ltsBtn hold duration (ms)"
     //% blockId=fwd_lts_hold_duration
     fwdHoldDuration(): number { return super.holdDuration() }
 
@@ -34,7 +34,7 @@ namespace fwdSensors {
      * Returns true if the button is currently pressed, otherwise false
      */
     //% group="Learn To Solder"
-    //% block="$this pressed"
+    //% block="%ltsBtn pressed"
     //% blockId=fwd_lts_is_pressed
     fwdIsPressed(): boolean { return super.pressed() }
 
@@ -78,7 +78,7 @@ namespace fwdSensors {
      */
     //% group="Learn To Solder"
     //% blockId=jacdac_ltslight_brightness___set
-    //% block="set %lights brightness to %value (\\%)"
+    //% block="set %ltsLight brightness to %value (\\%)"
     //% weight=100
     //% value.min=0
     //% value.max=100
