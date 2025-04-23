@@ -129,10 +129,10 @@ namespace fwdSensors {
   export function createLEDRing(): FwdLEDClient {
       
     let role = "";
-    if (fwdSensors.LightsClient.getCreatedCount() === 0) {
+    if (fwdSensors.FwdLEDClientClient.getCreatedCount() === 0) {
         role = 'ledRing'
     } else {
-        role = 'ledRing' + (fwdSensors.LightsClient.getCreatedCount() + 1)
+        role = 'ledRing' + (fwdSensors.FwdLEDClientClient.getCreatedCount() + 1)
     }
     
     return new FwdLEDClient(role)
