@@ -1,10 +1,16 @@
 namespace fwdSensors {
   
-  //% fixedInstances
   export class FwdLTSBtnClient extends modules.ButtonClient {
+
+    private static instanceCount = 0;
 
     constructor(role: string) {
       super(role)
+      FwdLTSBtnClient.instanceCount++;
+    }
+
+    static getCreatedCount(): number {
+      return FwdLTSBtnClient.instanceCount;
     }
 
     /**
@@ -34,18 +40,36 @@ namespace fwdSensors {
 
   }
 
-  //% fixedInstance whenUsed
-  export const BTN1 = new FwdLTSBtnClient("BTN1")
-  //% fixedInstance whenUsed
-  export const BTN2 = new FwdLTSBtnClient("BTN2")
-  //% fixedInstance whenUsed
-  export const BTN3 = new FwdLTSBtnClient("BTN3")
+  /**
+   * Create a Learn To Solder button client and automtically set it to a variable.
+   */
+  //% group="Learn To Solder"
+  //% block="Create LTS Button"
+  //% blockSetVariable=ltsBtn
+  //% weight=101
+  export function createLTSBtn(): FwdLTSBtnClient {
+      
+    let role = "";
+    if (fwdSensors.FwdLTSBtnClient.getCreatedCount() === 0) {
+        role = 'ltsBtn'
+    } else {
+        role = 'ltsBtn' + (fwdSensors.FwdLTSBtnClient.getCreatedCount() + 1)
+    }
+    
+    return new FwdLTSBtnClient(role)
+  }
 
-  //% fixedInstances
+  
   export class FwdLTSLightClient extends modules.LightbulbClient {
+
+    private static instanceCount = 0;
 
     constructor(role: string) {
       super(role)
+    }
+
+    static getCreatedCount(): number {
+      return FwdLTSLightClient.instanceCount;
     }
 
     /**
@@ -64,11 +88,23 @@ namespace fwdSensors {
     }
   }
 
-  //% fixedInstance
-  export const RED = new FwdLTSLightClient("RED?srvo=0")
-  //% fixedInstance
-  export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=1")
-  //% fixedInstance
-  export const GREEN = new FwdLTSLightClient("GREEN?srvo=2")
+  /**
+   * Create a Learn To Solder light client and automtically set it to a variable.
+   */
+  //% group="Learn To Solder"
+  //% block="Create LTS Light"
+  //% blockSetVariable=ltsLight
+  //% weight=101
+  export function createLTSLight(): FwdLTSLightClient {
+      
+    let role = "";
+    if (fwdSensors.FwdLTSBtnClient.getCreatedCount() === 0) {
+        role = 'ltsBtn'
+    } else {
+        role = 'ltsBtn' + (fwdSensors.FwdLTSBtnClient.getCreatedCount() + 1)
+    }
+    
+    return new FwdLTSLightClient(role)
+  }
 }
   

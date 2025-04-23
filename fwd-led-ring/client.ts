@@ -42,7 +42,7 @@ namespace fwdSensors {
 
     static getCreatedCount(): number {
       return FwdLEDClient.instanceCount;
-  }
+    }
 
     /**
      * Set the brightness of the LED ring
