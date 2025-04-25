@@ -98,10 +98,10 @@ namespace fwdSensors {
   export function createLTSLight(): FwdLTSLightClient {
       
     let role = "";
-    if (fwdSensors.FwdLTSBtnClient.getCreatedCount() === 0) {
-        role = 'ltsBtn'
+    if (fwdSensors.FwdLTSLightClient.getCreatedCount() === 0) {
+        role = 'ltsLight'
     } else {
-        role = 'ltsBtn' + (fwdSensors.FwdLTSBtnClient.getCreatedCount() + 1)
+        role = 'ltsLight' + (fwdSensors.FwdLTSLightClient.getCreatedCount() + 1)
     }
     
     return new FwdLTSLightClient(role)
